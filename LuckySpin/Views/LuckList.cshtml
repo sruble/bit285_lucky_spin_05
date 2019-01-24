@@ -1,0 +1,36 @@
+﻿@model IEnumerable<LuckySpin.Models.Repository.Luck>
+
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lucky Spins</title>
+</head>
+
+<body>
+        <h2>All Your Luck</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Luck</th>
+                <th>Result</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(LuckySpin.Models.Spin s in Model)
+            {
+                <tr>
+                    <td>@s.Luck</td>
+                    <td>@s.IsWinner</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
